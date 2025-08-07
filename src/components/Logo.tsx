@@ -4,7 +4,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 sm:h-12 md:h
   return (
     <div className="relative">
       <img
-        src="/ChatGPT Image Aug 7, 2025, 11_59_55 AM.png"
+        src="ChatGPT Image Aug 8, 2025, 03_03_00 AM.png"
         alt="CodeAstra Labs Logo"
         className={`${className} logo-filter`}
       />
