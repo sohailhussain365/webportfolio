@@ -6,33 +6,27 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) =
       <img
         src="/ChatGPT Image Aug 7, 2025, 11_59_55 AM.png"
         alt="CodeAstra Labs Logo"
-        className={`${className} logo-adaptive`}
+        className={`${className} logo-filter`}
       />
       <style jsx>{`
-        .logo-adaptive {
-          /* Keep original logo colors in both modes */
-          filter: brightness(1) contrast(1) saturate(1);
-          transition: all 0.3s ease;
-          
-          /* Add text shadow for light mode visibility */
-          drop-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+        .logo-filter {
+          /* Light mode - make text much darker for better visibility */
+          filter: brightness(0.3) contrast(1.5) saturate(1.2);
+          transition: filter 0.3s ease;
         }
         
-        /* Dark mode - use light shadow for text visibility */
-        .dark .logo-adaptive {
+        /* Dark mode - keep original colors */
+        .dark .logo-filter {
           filter: brightness(1) contrast(1) saturate(1);
-          drop-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
         }
         
         /* Hover effects */
-        .logo-adaptive:hover {
-          transform: scale(1.05);
-          drop-shadow: 0 0 5px rgba(0, 0, 0, 1);
+        .logo-filter:hover {
+          filter: brightness(0.2) contrast(1.6) saturate(1.3);
         }
         
-        .dark .logo-adaptive:hover {
-          transform: scale(1.05);
-          drop-shadow: 0 0 5px rgba(255, 255, 255, 1);
+        .dark .logo-filter:hover {
+          filter: brightness(1.1) contrast(1.1) saturate(1.1);
         }
       `}</style>
     </div>
