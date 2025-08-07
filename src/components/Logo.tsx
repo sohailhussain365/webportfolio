@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) => {
+const Logo: React.FC<{ className?: string }> = ({ className = "h-10 sm:h-12 md:h-16 lg:h-20 w-auto" }) => {
   return (
     <div className="relative">
       <img
@@ -8,23 +8,20 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) =
         alt="CodeAstra Labs Logo"
         className={`${className} logo-filter`}
       />
-      <style jsx>{`
+      <style>{`
         .logo-filter {
-          /* Light mode - darken the text for better visibility */
-          filter: brightness(0.7) contrast(1.2) saturate(1.1);
+          filter: brightness(1) contrast(1.1) saturate(1.2);
           transition: filter 0.3s ease;
         }
         
-        /* Dark mode - keep original colors */
         .dark .logo-filter {
           filter: brightness(1) contrast(1) saturate(1);
         }
-        
-        /* Hover effects */
+
         .logo-filter:hover {
-          filter: brightness(0.6) contrast(1.3) saturate(1.2);
+          filter: brightness(0.9) contrast(1.2) saturate(1.2);
         }
-        
+
         .dark .logo-filter:hover {
           filter: brightness(1.1) contrast(1.1) saturate(1.1);
         }

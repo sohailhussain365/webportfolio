@@ -3,28 +3,28 @@ import { Moon, Sun, Menu, X, Phone, Mail, MessageCircle, ExternalLink, Github, C
 import Logo from './components/Logo';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-      setDarkMode(true);
+      // setDarkMode(true);
       document.documentElement.classList.add('dark');
     }
   }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  //   if (!darkMode) {
+  //     document.documentElement.classList.add('dark');
+  //     localStorage.setItem('theme', 'dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //     localStorage.setItem('theme', 'light');
+  //   }
+  // };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -114,7 +114,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+    <div className={`min-h-screen transition-colors duration-300  ? 'dark' : ''}`}>
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,15 +130,15 @@ function App() {
               <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Services</button>
               <button onClick={() => scrollToSection('portfolio')} className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Portfolio</button>
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</button>
-              <button onClick={toggleDarkMode} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              {/* <button onClick={toggleDarkMode} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+              </button> */}
             </div>
 
             <div className="md:hidden flex items-center space-x-2">
-              <button onClick={toggleDarkMode} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+              {/* <button onClick={toggleDarkMode} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+              </button> */}
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -161,35 +161,42 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <div className="mb-8 animate-fade-in">
-              <Logo className="h-24 w-auto mx-auto mb-6" />
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up">
-              CodeAstra <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Labs</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up-delay">
-              Transforming ideas into exceptional digital experiences through innovative software solutions
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2">
-              <button 
-                onClick={() => scrollToSection('portfolio')} 
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                View Our Work
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="px-8 py-4 border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-300 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white hover:border-transparent rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                Get In Touch
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+ {/* Hero Section */}
+<section
+  id="home"
+  className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 flex items-center pt-[72px] md:pt-20"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div className="text-center">
+      <div className="mb-8 animate-fade-in">
+        <Logo className="h-16 md:h-32 w-auto mx-auto mb-6" />
+      </div>
+      <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up">
+        CodeAstra{" "}
+        <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          Labs
+        </span>
+      </h1>
+      <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up-delay">
+        Transforming ideas into exceptional digital experiences through innovative software solutions
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up-delay-2">
+        <button
+          onClick={() => scrollToSection("portfolio")}
+          className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          View Our Work
+        </button>
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-600 to-blue-500 hover:from-pink-600 hover:via-purple-700 hover:to-blue-600 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Get In Touch
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white dark:bg-gray-800">
@@ -284,13 +291,13 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <button className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    View Project <ExternalLink className="w-4 h-4 ml-2" />
-                  </button>
+                
                 </div>
               </div>
             ))}
           </div>
+
+
         </div>
       </section>
 
