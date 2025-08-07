@@ -10,8 +10,8 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) =
       />
       <style jsx>{`
         .logo-filter {
-          /* Light mode - darken the text for better visibility */
-          filter: brightness(0.7) contrast(1.2) saturate(1.1);
+          /* Light mode - make text much darker for better visibility */
+          filter: brightness(0.3) contrast(1.5) saturate(1.2);
           transition: filter 0.3s ease;
         }
         
@@ -22,7 +22,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-10 w-auto" }) =
         
         /* Hover effects */
         .logo-filter:hover {
-          filter: brightness(0.6) contrast(1.3) saturate(1.2);
+          filter: brightness(0.2) contrast(1.6) saturate(1.3);
         }
         
         .dark .logo-filter:hover {
